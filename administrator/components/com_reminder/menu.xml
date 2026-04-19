@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<config>
+
+	<menu name="cpanel">
+
+		<item		label="REMINDER_LAYOUT_CUSTOMERS"
+				description="REMINDER_LAYOUT_SHOW_CUSTOMERS_LAYOUT"
+				type="layout"
+				view="customers"
+				layout="default"
+				icon="reminder_customers"/>
+
+		<item		label="REMINDER_LAYOUT_HISTORIES"
+				description="REMINDER_LAYOUT_SHOW_HISTORIES_LAYOUT"
+				type="layout"
+				view="histories"
+				layout="default"
+				icon="reminder_histories"/>
+
+		<item		label="REMINDER_LAYOUT_TEMPLETES"
+				description="REMINDER_LAYOUT_SHOW_TEMPLETES_LAYOUT"
+				type="layout"
+				view="templetes"
+				layout="default"
+				icon="reminder_templetes"/>
+
+		<item		label="REMINDER_LAYOUT_PACKAGES"
+				description="REMINDER_LAYOUT_SHOW_PACKAGES_LAYOUT"
+				type="layout"
+				view="packages"
+				layout="default"
+				icon="reminder_packages"/>
+	</menu>
+
+	<menu name="menu">
+
+		<item		label="REMINDER_LAYOUT_CONTROL_PANEL"
+				description="REMINDER_LAYOUT_SHOW_CONTROL_PANEL_LAYOUT"
+				type="layout"
+				view="cpanel"
+				layout="default"
+				icon="reminder_cpanel"/>
+
+		<item		label="REMINDER_LAYOUT_CUSTOMERS"
+				description="REMINDER_LAYOUT_SHOW_CUSTOMERS_LAYOUT"
+				type="layout"
+				view="customers"
+				layout="default"
+				icon="reminder_customers"/>
+
+		<item		label="REMINDER_LAYOUT_HISTORIES"
+				description="REMINDER_LAYOUT_SHOW_HISTORIES_LAYOUT"
+				type="layout"
+				view="histories"
+				layout="default"
+				icon="reminder_histories"/>
+
+		<item		label="REMINDER_LAYOUT_TEMPLETES"
+				description="REMINDER_LAYOUT_SHOW_TEMPLETES_LAYOUT"
+				type="layout"
+				view="templetes"
+				layout="default"
+				icon="reminder_templetes"/>
+
+		<item		label="REMINDER_LAYOUT_PACKAGES"
+				description="REMINDER_LAYOUT_SHOW_PACKAGES_LAYOUT"
+				type="layout"
+				view="packages"
+				layout="default"
+				icon="reminder_packages"/>
+	</menu>
+</config>

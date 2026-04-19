@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<form>
+
+	<fieldset name="history.form" addfieldpath="/administrator/components/com_reminder/models/fields">
+
+		<field name="customer_id"
+				alias="_customer_id_domain"
+				label="REMINDER_FIELD_DOMAIN"
+				filter="INT"
+				listKey="id"
+				labelKey="domain"
+				type="ckcombo"
+				nullLabel="REMINDER_JSEARCH_SELECT_DOMAIN"/>
+
+		<field name="subject"
+				alias="subject"
+				label="REMINDER_FIELD_SUBJECT"
+				filter="STRING"
+				type="cktext"/>
+
+		<field name="content"
+				alias="content"
+				label="REMINDER_FIELD_CONTENT"
+				filter="safehtml"
+				type="editor"/>
+	</fieldset>
+
+	<fieldset name="default.filters" addfieldpath="/administrator/components/com_reminder/models/fields">
+
+		<field name="filter_customer_id"
+				listKey="id"
+				labelKey="domain"
+				type="ckcombo"
+				submit="true"
+				nullLabel="REMINDER_FILTER_NULL_DOMAIN"
+				class="span-2 element-filter"
+				label="REMINDER_JSEARCH_DOMAIN"
+				ui="chosen"/>
+
+		<field name="filter_creation_date_from"
+				placeholder="REMINDER_FILTER_CREATION_DATE_CREATION_DATE_FROM"
+				type="calendar"
+				format="%Y-%m-%d %H:%M"
+				filter="USER_UTC"
+				todaybutton="true"
+				weeknumbers="false"
+				filltable="true"
+				singleheader="false"
+				minyear="-100"
+				maxyear="+50"
+				timeformat="24"
+				onchange="this.form.submit();"
+				label="REMINDER_JSEARCH_CREATION_DATE"
+				class="element-filter input-small"
+				ui="chosen"/>
+
+		<field name="filter_creation_date_to"
+				placeholder="REMINDER_FILTER_CREATION_DATE_CREATION_DATE_TO"
+				type="calendar"
+				format="%Y-%m-%d %H:%M"
+				filter="USER_UTC"
+				todaybutton="true"
+				weeknumbers="false"
+				filltable="true"
+				singleheader="false"
+				minyear="-100"
+				maxyear="+50"
+				timeformat="24"
+				onchange="this.form.submit();"
+				label="REMINDER_JSEARCH_CREATION_DATE"
+				class="element-filter input-small"
+				ui="chosen"/>
+
+		<field name="search_search"
+				type="cksearch"
+				placeholder="REMINDER_FILTER_NULL_SUBJECT"
+				label="REMINDER_JSEARCH_SUBJECT"
+				class="element-filter element-search search-query"
+				ui="chosen"/>
+
+		<field name="sortTable"
+				type="cksort"
+				responsive="hidden-phone"
+				submit="true"
+				nullLabel="JGLOBAL_SORT_BY"
+				class="span-2 element-filter"
+				label="Sort by"
+				ui="chosen"/>
+
+		<field name="directionTable"
+				type="ckdirection"
+				responsive="hidden-phone"
+				submit="true"
+				nullLabel="JFIELD_ORDERING_DESC"
+				class="span-2 element-filter"
+				label="Direction"
+				ui="chosen"/>
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+
+	<fieldset name="modal.filters" addfieldpath="/administrator/components/com_reminder/models/fields">
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+</form>

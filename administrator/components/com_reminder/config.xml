@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<config>
+
+	<fieldset name="configuration"
+			label="REMINDER_CONFIG_COMPONENT_CONFIGURATION"
+			description="REMINDER_CONFIG_COMPONENT_CONFIGURATION_1"
+			addfieldpath="/administrator/components/com_reminder/models/fields">
+            
+            <field name="admin_email"
+				label="Admin Email"
+				filter="STRING"
+				type="cktext"/>
+                
+            <field name="gst"
+				label="GST"
+				filter="FLOAT"
+				default="7"
+				type="cktext"/>
+                
+                
+            <field name="notify_admin"
+				label="Notify Admin"
+				filter="FLOAT"
+				default="31"
+				type="cktext"/>
+                
+            
+            <field name="notify_customer_1"
+				label="Notify Customer 1"
+				filter="FLOAT"
+				default="30"
+				type="cktext"/>
+                
+            <field name="notify_customer_2"
+				label="Notify Customer 2"
+				filter="FLOAT"
+				default="7"
+				type="cktext"/>
+                
+                
+            <field name="notify_customer_3"
+				label="Notify Customer 3"
+				filter="FLOAT"
+				default="2"
+				type="cktext"/>
+            
+                
+            <field type="spacer" name="currency" hr="true" />    
+			<field name="currency_symbol"
+				label="Currency symbol"
+				filter="STRING"
+				default="$"
+				description="Currency Symbol"
+				type="cktext"/>
+
+			<field name="number_decimal"
+				label="Number of decimal"
+				filter="INT"
+				default="2"
+				description="Number of decimal"
+				type="cktext"/>
+
+			<field name="decimal_point"
+				label="Decimal point"
+				filter="STRING"
+				default=","
+				description="Decimal point"
+				type="cktext"/>
+
+			<field name="thousand_separator"
+				label="Thousand separator"
+				filter="STRING"
+				default="."
+				description="Thousand separator"
+				type="cktext"/>
+
+			<field name="currency_display" type="radio" default="0" label="Currency display" description="Select currency position">
+  				<option value="0">Before amount</option>
+			  	<option value="1">After amount</option>
+			</field>
+    </fieldset>
+
+	<fieldset name="permissions"
+			label="REMINDER_CONFIG_PERMISSIONS"
+			description="REMINDER_CONFIG_DEFAULT_PERMISSIONS_USED_FOR_ALL_CONTENT_IN_THIS_COMPONENT"
+			addfieldpath="/administrator/components/com_reminder/models/fields">
+
+		<field name="rules"
+				label="REMINDER_FIELD_PERMISSIONS"
+				filter="rules"
+				type="rules"
+				validate="rules"
+				section="component"
+				component="com_reminder"/>
+	</fieldset>
+</config>

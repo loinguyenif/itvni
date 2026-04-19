@@ -1,0 +1,110 @@
+/**                               ______________________________________________
+*                          o O   |                                              |
+*                 (((((  o      <    Generated with Cook Self Service  V3.1.10  |
+*                ( o o )         |______________________________________________|
+* --------oOOO-----(_)-----OOOo---------------------------------- www.j-cook.pro --- +
+* @version		v1
+* @package		Reminder
+* @subpackage	Reminder
+* @copyright	
+* @author		 -  - 
+* @license		
+*
+*             .oooO  Oooo.
+*             (   )  (   )
+* -------------\ (----) /----------------------------------------------------------- +
+*               \_)  (_/
+*/
+
+/**
+* Component icons 48px (Cpanel)
+**/
+.ico-48-reminder, .icon-48-reminder {
+	background-image:url('../images/icon-48-reminder.png');
+}
+.ico-48-reminder_customers, .icon-48-reminder_customers {
+	background-image:url('../images/icon-48-reminder_customers.png');
+}
+.ico-48-reminder_histories, .icon-48-reminder_histories {
+	background-image:url('../images/icon-48-reminder_histories.png');
+}
+.ico-48-reminder_templetes, .icon-48-reminder_templetes {
+	background-image:url('../images/icon-48-reminder_templetes.png');
+}
+.ico-48-reminder_packages, .icon-48-reminder_packages {
+	background-image:url('../images/icon-48-reminder_packages.png');
+}
+.ico-48-reminder_cpanel, .icon-48-reminder_cpanel {
+	background-image:url('../images/icon-48-reminder_cpanel.png');
+}
+
+/**
+* Component icons 16px (Sub Menu)
+**/
+.ico-16-reminder, .icon-16-reminder {
+	background-image:url('../images/icon-16-reminder.png');
+}
+.ico-16-reminder_customers, .icon-16-reminder_customers {
+	background-image:url('../images/icon-16-reminder_customers.png');
+}
+.ico-16-reminder_histories, .icon-16-reminder_histories {
+	background-image:url('../images/icon-16-reminder_histories.png');
+}
+.ico-16-reminder_templetes, .icon-16-reminder_templetes {
+	background-image:url('../images/icon-16-reminder_templetes.png');
+}
+.ico-16-reminder_packages, .icon-16-reminder_packages {
+	background-image:url('../images/icon-16-reminder_packages.png');
+}
+.ico-16-reminder_cpanel, .icon-16-reminder_cpanel {
+	background-image:url('../images/icon-16-reminder_cpanel.png');
+}
+
+/**
+* Icons colors
+**/
+.icon-edit:before {
+	color:#2f96b4;
+}
+.icon-featured:before, .icon-star:before, .icon-star-empty:before, .icon-default:before {
+	color:#f89406;
+}
+.icon-pending:before {
+	color:#f89406;
+}
+.icon-publish:before, .icon-save:before, .icon-ok:before {
+	color:#51a351;
+}
+.icon-unpublish:before, .btn-toolbar .icon-cancel:before {
+	color:#bd362f;
+}
+.icon-not-ok:before, .icon-eye-close:before {
+	color:#bd362f;
+}
+.icon-save-new:before {
+	color:#51a351;
+}
+.icon-ban-circle:before, .icon-minus-sign:before {
+	color:#bd362f;
+}
+.icon-save-copy:before, .btn-toolbar .icon-copy:before {
+	color:#51a351;
+}
+
+/**
+* System
+**/
+span.spinner {
+	background-image:url('../images/icon-16-spinner.gif');
+}
+[class^="icon-32"], [class*=" icon-32"] {
+	background-position:0px 0px; !important;
+}
+
+/**
+* Fixes
+**/
+.jgrid span {
+	padding:0px;
+}
+

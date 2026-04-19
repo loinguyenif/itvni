@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<form>
+
+	<fieldset name="customer.form" addfieldpath="/administrator/components/com_reminder/models/fields">
+
+		<field name="templete_id"
+				alias="_templete_id_slug_name"
+				label="REMINDER_FIELD_TEMPLETE"
+				filter="INT"
+				listKey="id"
+				labelKey="slug_name"
+				type="ckcombo"
+				nullLabel="REMINDER_JSEARCH_SELECT_TEMPLETE"/>
+
+		<field name="domain"
+				alias="domain"
+				label="REMINDER_FIELD_DOMAIN"
+				filter="STRING"
+				type="cktext"/>
+
+		<field name="package_id"
+				alias="_package_id_name"
+				label="REMINDER_FIELD_PACKAGE"
+				filter="INT"
+				listKey="id"
+				labelKey="name"
+				type="ckcombo"
+				nullLabel="REMINDER_JSEARCH_SELECT_PACKAGE"/>
+
+		<field name="company_name"
+				alias="company_name"
+				label="REMINDER_FIELD_COMPANY_NAME"
+				filter="STRING"
+				type="cktext"/>
+
+		<field name="name"
+				alias="name"
+				label="REMINDER_FIELD_NAME"
+				filter="STRING"
+				type="cktext"/>
+
+		<field name="email"
+				alias="email"
+				label="REMINDER_FIELD_EMAIL"
+				filter="STRING"
+				type="cktext"
+				validate="ckemail"
+				class="validate[custom[ckemail]]"/>
+
+		<field name="phone_no"
+				alias="phone_no"
+				label="REMINDER_FIELD_PHONE_NO"
+				filter="STRING"
+				type="cktext"/>
+
+		<field name="address"
+				alias="address"
+				label="REMINDER_FIELD_ADDRESS"
+				filter="STRING"
+				type="cktext"/>
+
+		<field name="price"
+				alias="price"
+				label="REMINDER_FIELD_PRICE"
+				filter="FLOAT"
+				numericFormat="10,2"
+				type="cktext"/>
+
+		<field name="note"
+				alias="note"
+				label="REMINDER_FIELD_NOTE"
+				filter="safehtml"
+				type="editor"/>
+
+		<field name="creation_date"
+				alias="creation_date"
+				label="REMINDER_FIELD_CREATION_DATE"
+				filter="USER_UTC"
+				type="calendar"
+				format="%Y-%m-%d %H:%M"
+				todaybutton="true"
+				weeknumbers="false"
+				filltable="true"
+				singleheader="false"
+				minyear="-100"
+				maxyear="+50"
+				timeformat="24"/>
+
+		<field name="expiration_date"
+				alias="expiration_date"
+				label="REMINDER_FIELD_EXPIRATION_DATE"
+				filter="STRING"
+				type="calendar"
+				format="%Y-%m-%d"
+				todaybutton="true"
+				weeknumbers="false"
+				filltable="true"
+				singleheader="false"
+				minyear="-100"
+				maxyear="+50"
+				showtime="false"/>
+
+		<field name="published"
+				alias="published"
+				label="REMINDER_FIELD_PUBLISHED"
+				filter="INT"
+				access="core.edit.state"
+				listKey="value"
+				default="0"
+				type="ckstate">
+			<option value="0" icon="icomoon-cancel" color="danger">REMINDER_FIELDS_BOOL_NO</option>
+			<option value="1" icon="icomoon-ok" color="success">REMINDER_FIELDS_BOOL_YES</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="default.filters" addfieldpath="/administrator/components/com_reminder/models/fields">
+
+		<field name="filter_published"
+				type="ckstate"
+				access="core.edit.state"
+				submit="true"
+				nullLabel="REMINDER_FILTER_NULL_SELECT_STATE"
+				display="combo"
+				label="State"
+				class="element-filter span-2"
+				ui="chosen"/>
+
+		<field name="filter_templete_id"
+				listKey="id"
+				labelKey="slug_name"
+				type="ckcombo"
+				submit="true"
+				nullLabel="REMINDER_FILTER_NULL_TEMPLETE"
+				class="span-2 element-filter"
+				label="REMINDER_JSEARCH_TEMPLETE"
+				ui="chosen"/>
+
+		<field name="filter_package_id"
+				listKey="id"
+				labelKey="name"
+				type="ckcombo"
+				submit="true"
+				nullLabel="REMINDER_FILTER_NULL_PACKAGE"
+				class="span-2 element-filter"
+				label="REMINDER_JSEARCH_PACKAGE"
+				ui="chosen"/>
+
+		<field name="search_search"
+				type="cksearch"
+				placeholder="REMINDER_FILTER_NULL_COMPANY_NAME_NAME_PHONE_NO_ADDRESS_DOMAIN"
+				label="REMINDER_JSEARCH_COMPANY_NAME_NAME_PHONE_NO_ADDRESS_DOMAIN"
+				class="element-filter element-search search-query"
+				ui="chosen"/>
+
+		<field name="sortTable"
+				type="cksort"
+				responsive="hidden-phone"
+				submit="true"
+				nullLabel="JGLOBAL_SORT_BY"
+				class="span-2 element-filter"
+				label="Sort by"
+				ui="chosen"/>
+
+		<field name="directionTable"
+				type="ckdirection"
+				responsive="hidden-phone"
+				submit="true"
+				nullLabel="JFIELD_ORDERING_DESC"
+				class="span-2 element-filter"
+				label="Direction"
+				ui="chosen"/>
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+
+	<fieldset name="modal.filters" addfieldpath="/administrator/components/com_reminder/models/fields">
+
+		<field name="filter_published"
+				type="ckstate"
+				access="core.edit.state"
+				submit="true"
+				nullLabel="REMINDER_FILTER_NULL_SELECT_STATE"
+				display="combo"
+				label="State"
+				class="element-filter span-2"
+				ui="chosen"/>
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+</form>

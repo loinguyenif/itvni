@@ -1,0 +1,13 @@
+.text-lg-left{
+    text-align: left !important;
+}
+.text-lg-right{
+    text-align: right !important;
+}
+.sppb-btn-default,
+.sppb-btn-default:hover{
+    background: #E54C12;
+}
+.sppb-pricing-box .sppb-pricing-features>ul>li .fa-check{
+    color: #0a5da3;
+}

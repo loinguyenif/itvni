@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<config>
+
+	<menu name="cpanel"/>
+
+	<menu name="menu">
+
+		<item		label="REMINDER_LAYOUT_CONTROL_PANEL"
+				description="REMINDER_LAYOUT_SHOW_CONTROL_PANEL_LAYOUT"
+				type="layout"
+				view="cpanel"
+				layout="default"
+				icon="reminder_cpanel"/>
+	</menu>
+</config>

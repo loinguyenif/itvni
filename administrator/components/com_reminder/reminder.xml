@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="component" version="1.6" method="upgrade">
+	<name><![CDATA[reminder]]></name>
+	<author><![CDATA[]]></author>
+	<creationDate><![CDATA[22 Dec 2024]]></creationDate>
+	<copyright><![CDATA[]]></copyright>
+	<authorEmail><![CDATA[]]></authorEmail>
+	<authorUrl><![CDATA[]]></authorUrl>
+	<version><![CDATA[v1]]></version>
+	<license><![CDATA[]]></license>
+	<description><![CDATA[]]></description>
+
+	<files folder="site">
+		<folder>_fork</folder>
+		<folder>controllers</folder>
+		<folder>css</folder>
+		<folder>files</folder>
+		<folder>images</folder>
+		<folder>layouts</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>menu.xml</filename>
+		<filename>reminder.php</filename>
+		<filename>router.php</filename>
+	</files>
+
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_reminder.ini</language>
+	</languages>
+
+	<administration>
+
+		<files folder="admin">
+			<folder>classes</folder>
+			<folder>controllers</folder>
+			<folder>css</folder>
+			<folder>dom</folder>
+			<folder>helpers</folder>
+			<folder>images</folder>
+			<folder>js</folder>
+			<folder>layouts</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>menu.xml</filename>
+			<filename>reminder.php</filename>
+		</files>
+
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB.com_reminder.ini</language>
+			<language tag="en-GB">language/en-GB.com_reminder.sys.ini</language>
+		</languages>
+		<menu img="components/com_reminder/images/icon-16-reminder.png">REMINDER_MENU_REMINDER</menu>
+
+		<submenu>
+			<menu img="components/com_reminder/images/icon-16-reminder_customers.png" link="option=com_reminder&amp;view=customers">REMINDER_MENU_CUSTOMERS</menu>
+			<menu img="components/com_reminder/images/icon-16-reminder_histories.png" link="option=com_reminder&amp;view=histories">REMINDER_MENU_HISTORIES</menu>
+			<menu img="components/com_reminder/images/icon-16-reminder_templetes.png" link="option=com_reminder&amp;view=templetes">REMINDER_MENU_TEMPLETES</menu>
+		</submenu>
+	</administration>
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+
+	<update>
+
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<uninstall>
+
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<media		destination="com_reminder"
+			folder="media"/>
+</extension>
