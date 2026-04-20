@@ -192,6 +192,13 @@ class ComposerStaticInitc14bde14f8c86840049f5c1809c453dd
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PayPal' => 
+            array (
+                0 => __DIR__ . '/..' . '/PayPal',
+            ),
+        ),
         'S' => 
         array (
             'SimplePie' => 

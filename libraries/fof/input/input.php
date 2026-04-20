@@ -318,49 +318,4 @@ class FOFInput extends JInput
 
 		return $var;
 	}
-
-	/**
-	 * Method to serialize the input for PHP 8.1+.
-	 *
-	 * @return  array  The serialized input data.
-	 *
-	 * @since   2.0
-	 */
-	public function __serialize(): array
-	{
-		// Load all of the inputs.
-		$this->loadAllInputs();
-
-		// Remove $_ENV and $_SERVER from the inputs.
-		$inputs = $this->inputs;
-		unset($inputs['env'], $inputs['server']);
-
-		// Return the options, data, and inputs.
-		return array($this->options, $this->data, $inputs);
-	}
-
-	/**
-	 * Method to unserialize the input for PHP 8.1+.
-	 *
-	 * @param   array  $data  The serialized input data.
-	 *
-	 * @return  void
-	 *
-	 * @since   2.0
-	 */
-	public function __unserialize(array $data): void
-	{
-		// Unserialize the options, data, and inputs.
-		list($this->options, $this->data, $this->inputs) = $data;
-
-		// Load the filter.
-		if (isset($this->options['filter']))
-		{
-			$this->filter = $this->options['filter'];
-		}
-		else
-		{
-			$this->filter = JFilterInput::getInstance();
-		}
-	}
 }

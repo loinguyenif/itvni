@@ -102,44 +102,4 @@ class Cookie extends Input
 
 		$this->data[$name] = $value;
 	}
-
-	/**
-	 * Method to serialize the cookie input for PHP 8.1+.
-	 *
-	 * @return  array  The serialized input data.
-	 *
-	 * @since   1.7.0
-	 * @deprecated  5.0  Use Joomla\Input\Cookie instead
-	 */
-	public function __serialize(): array
-	{
-		// Return the options and data.
-		return array($this->options, $this->data);
-	}
-
-	/**
-	 * Method to unserialize the cookie input for PHP 8.1+.
-	 *
-	 * @param   array  $data  The serialized input data.
-	 *
-	 * @return  void
-	 *
-	 * @since   1.7.0
-	 * @deprecated  5.0  Use Joomla\Input\Cookie instead
-	 */
-	public function __unserialize(array $data): void
-	{
-		// Unserialize the options and data.
-		list($this->options, $this->data) = $data;
-
-		// Load the filter.
-		if (isset($this->options['filter']))
-		{
-			$this->filter = $this->options['filter'];
-		}
-		else
-		{
-			$this->filter = InputFilter::getInstance();
-		}
-	}
 }
