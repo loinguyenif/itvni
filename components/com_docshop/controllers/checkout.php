@@ -102,6 +102,9 @@ class DocshopControllerCheckout extends JControllerLegacy
             $orderModel = $this->getModel('checkout', 'DocshopModel');
             $order = $orderModel->createOrder($documentId, $payment, $params->get('store_currency', 'USD'));
 
+            $session = JFactory::getSession();
+            $session->set('com_docshop.order_id', $order->id);
+
             $app->redirect(
                 JRoute::_('index.php?option=com_docshop&task=download.download&id=' . $order->id, false),
                 'Payment successful! Your document is ready to download.',

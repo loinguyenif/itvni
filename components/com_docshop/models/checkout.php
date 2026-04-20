@@ -69,8 +69,14 @@ class DocshopModelCheckout extends JModelLegacy
         $db->setQuery($query);
         $db->execute();
 
+        $orderId = (int) $db->insertid();
+        if ($orderId === 0) {
+            $db->setQuery('SELECT LAST_INSERT_ID()');
+            $orderId = (int) $db->loadResult();
+        }
+
         $order = new \stdClass();
-        $order->id = $db->insertid();
+        $order->id = $orderId;
         $order->order_number = $orderData['order_number'];
         $order->status = 'completed';
 

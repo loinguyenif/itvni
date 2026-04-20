@@ -21,12 +21,18 @@ class DocshopControllerDownload extends JControllerLegacy
             return;
         }
 
+        if (!$orderId) {
+            $session = JFactory::getSession();
+            $orderId = (int) $session->get('com_docshop.order_id', 0);
+        }
+
         $model = $this->getModel('download', 'DocshopModel');
         $order = $model->getOrder($orderId);
 
         // Verify ownership and payment status
         if (!$order || $order->user_id != $user->id || $order->status !== 'completed') {
-            throw new \Exception('Order not found or not authorized', 403);
+            $app->redirect(JRoute::_('index.php?option=com_docshop&view=documents', false), 'Order not found or not authorized', 'error');
+            return;
         }
 
         $document = $model->getDocument($order->document_id);
@@ -44,6 +50,10 @@ class DocshopControllerDownload extends JControllerLegacy
 
         // Update download count
         $model->updateDownload($orderId);
+
+        // Clear fallback session value after successful download initiation
+        $session = JFactory::getSession();
+        $session->clear('com_docshop.order_id');
 
         // Stream file
         $this->streamFile($filePath, $document->title);
