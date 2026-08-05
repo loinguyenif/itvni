@@ -38,6 +38,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                     </th>
                     <th><?php echo JHtml::_('grid.sort', 'COM_DOCSHOP_HEADING_TITLE', 'a.title', $listDirn, $listOrder); ?></th>
                     <th width="10%"><?php echo JHtml::_('grid.sort', 'COM_DOCSHOP_HEADING_PRICE', 'a.price', $listDirn, $listOrder); ?></th>
+                    <th width="8%" class="center"><?php echo JText::_('COM_DOCSHOP_HEADING_GUIDE'); ?></th>
                     <th width="5%"><?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.published', $listDirn, $listOrder); ?></th>
                     <th width="10%"><?php echo JHtml::_('grid.sort', 'JDATE', 'a.created', $listDirn, $listOrder); ?></th>
                     <th width="1%" class="nowrap"><?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?></th>
@@ -56,6 +57,13 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                         </td>
                         <td class="center">
                             $<?php echo number_format($item->price, 2); ?>
+                        </td>
+                        <td class="center">
+                            <?php if (!empty($item->youtube_url)) : ?>
+                                <span class="label label-success" title="<?php echo $this->escape($item->youtube_url); ?>"><i class="icon-play"></i> Yes</span>
+                            <?php else : ?>
+                                <span class="label label-default">No</span>
+                            <?php endif; ?>
                         </td>
                         <td class="center">
                             <?php echo JHtml::_('jgrid.published', $item->published, $i, 'documents.', true, 'cb'); ?>

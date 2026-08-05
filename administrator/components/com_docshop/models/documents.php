@@ -32,7 +32,7 @@ class DocshopModelDocuments extends JModelList
         $db = $this->getDbo();
         $query = $db->getQuery(true);
 
-        $query->select(array('a.id', 'a.title', 'a.price', 'a.category_id', 'a.published', 'a.created', 'a.created_by', 'a.file_size'))
+        $query->select(array('a.id', 'a.title', 'a.price', 'a.category_id', 'a.published', 'a.created', 'a.created_by', 'a.file_size', 'a.youtube_url'))
             ->from($db->quoteName('#__docshop_documents', 'a'));
 
         // Filter by published

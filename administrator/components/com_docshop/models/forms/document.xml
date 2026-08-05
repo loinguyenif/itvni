@@ -84,10 +84,10 @@
         />
         <field
             name="ordering"
-            type="ordering"
+            type="number"
             label="JFIELD_ORDERING_LABEL"
             description="JFIELD_ORDERING_DESC"
-            content_type="com_docshop.document"
+            min="0"
         />
         <field
             name="created"

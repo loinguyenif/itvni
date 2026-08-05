@@ -1445,8 +1445,13 @@ body.ltr .sp-megamenu-parent .sp-dropdown.sp-dropdown-sub {
   }
 }
 @media (min-width: 1200px) {
-  .sp-menu-full.container {
+  .sp-menu-full.container {    
     width: 1140px;
+  }
+}
+@media (min-width: 11600px) {
+  .sp-menu-full.container {
+    width: 1460px;
   }
 }
 #offcanvas-toggler {

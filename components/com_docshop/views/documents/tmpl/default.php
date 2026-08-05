@@ -7,6 +7,9 @@ use Joomla\CMS\Router\Route;
 JHtml::_('bootstrap.framework');
 JHtml::_('bootstrap.modal');
 
+// Load component CSS
+JHtml::_('stylesheet', 'com_docshop/com_docshop.css', array('relative' => true));
+
 if (!function_exists('docshopExtractYoutubeEmbedUrl')) {
     function docshopExtractYoutubeEmbedUrl($url)
     {
@@ -64,11 +67,11 @@ if (!function_exists('docshopExtractYoutubeEmbedUrl')) {
                     </div>
                     <div class="document-actions">
                         <a href="#paypalModal<?php echo (int) $item->id; ?>" class="btn btn-primary" data-toggle="modal">
-                            <?php echo Text::_('COM_DOCSHOP_DOWNLOAD_NOW'); ?>
+                            <i class="icon-download"></i> <?php echo Text::_('COM_DOCSHOP_DOWNLOAD_NOW'); ?>
                         </a>
                         <?php if (!empty($item->youtube_url)) : ?>
-                            <a href="#guideModal<?php echo (int) $item->id; ?>" class="btn btn-secondary" data-toggle="modal">
-                                <?php echo Text::_('COM_DOCSHOP_YOUTUBE_GUIDE'); ?>
+                            <a href="#guideModal<?php echo (int) $item->id; ?>" class="btn btn-secondary" data-toggle="modal" title="<?php echo Text::_('COM_DOCSHOP_YOUTUBE_GUIDE'); ?>">
+                                <i class="icon-play"></i> <?php echo Text::_('COM_DOCSHOP_YOUTUBE_GUIDE'); ?>
                             </a>
                         <?php endif; ?>
                     </div>
@@ -99,27 +102,28 @@ if (!function_exists('docshopExtractYoutubeEmbedUrl')) {
                     <?php $embedUrl = docshopExtractYoutubeEmbedUrl($item->youtube_url); ?>
                     <div id="guideModal<?php echo (int) $item->id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                            <h3><?php echo Text::_('COM_DOCSHOP_GUIDE_VIDEO'); ?></h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h3><i class="icon-play"></i> <?php echo Text::_('COM_DOCSHOP_GUIDE_VIDEO'); ?></h3>
                         </div>
                         <div class="modal-body">
-                            <h4><?php echo htmlspecialchars($item->title); ?></h4>
-                            <?php if ($embedUrl) : ?>
-                                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                            <div class="youtube-video-container">
+                                <?php if ($embedUrl) : ?>
                                     <iframe
+                                        width="100%"
+                                        height="480"
                                         src="<?php echo htmlspecialchars($embedUrl); ?>"
                                         title="<?php echo htmlspecialchars($item->title); ?>"
-                                        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                        style="border:0;"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowfullscreen
                                     ></iframe>
-                                </div>
-                            <?php else : ?>
-                                <p><?php echo Text::_('COM_DOCSHOP_NO_GUIDE_AVAILABLE'); ?></p>
-                            <?php endif; ?>
+                                <?php else : ?>
+                                    <p class="alert alert-info"><?php echo Text::_('COM_DOCSHOP_NO_GUIDE_AVAILABLE'); ?></p>
+                                <?php endif; ?>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo Text::_('COM_DOCSHOP_BACK'); ?></button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo Text::_('COM_DOCSHOP_BACK'); ?></button>
                         </div>
                     </div>
                 <?php endif; ?>
